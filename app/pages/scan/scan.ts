@@ -1,14 +1,17 @@
-import {NavController, Page} from 'ionic-angular';
+import {NavController, NavParams, Page} from 'ionic-angular';
+import {BarcodeData} from '../home/home';
 
 @Page({
   templateUrl: 'build/pages/scan/scan.html'
 })
 export class ScanPage {
-  constructor(private nav: NavController) {
+    barcodeData: BarcodeData;
 
-  }
+    constructor(private nav: NavController, navParams: NavParams) {
+        this.barcodeData = navParams.get('details');
+    }
 
-  back() {
-    this.nav.pop();
-  }
+    back() {
+        this.nav.pop();
+    }
 }

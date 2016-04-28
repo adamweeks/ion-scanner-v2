@@ -1,16 +1,19 @@
 <ion-navbar *navbar>
   <ion-title>
-    Home
+    Scan Details
   </ion-title>
 </ion-navbar>
 
 <ion-content class="home">
-  <ion-card>
-    <ion-card-header>
-      Scan Details
-    </ion-card-header>
-    <ion-card-content>
+  <ion-list no-border>
+      <ion-list-header>Barcode</ion-list-header>
+      <ion-item>
+          {{ barcodeData.text }}
+      </ion-item>
+      <ion-list-header>Format</ion-list-header>
+      <ion-item>
+          {{ barcodeData.format }}
+      </ion-item>
       <button block (click)="back()">Back</button>
-    </ion-card-content>
-  </ion-card>
+  </ion-list>
 </ion-content>
